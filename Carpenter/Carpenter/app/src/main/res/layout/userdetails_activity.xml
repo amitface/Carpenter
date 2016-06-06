@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_margin="5dp"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:background="@drawable/home_logo"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/arch_type_sp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/boundry"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <!--<EditText
+                android:id="@+id/tehsil_sp"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textCursorDrawable="@null"
+                android:layout_marginRight="2.5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/boundry"
+                android:hint="Tehsil"
+                android:inputType="text"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/district_sp"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2.5dp"
+                android:textCursorDrawable="@null"
+                android:layout_weight="0.5"
+                android:background="@drawable/boundry"
+                android:hint="District"
+                android:inputType="text"
+                android:padding="5dp"
+                android:singleLine="true" />-->
+
+            <Spinner
+                android:id="@+id/district_sp"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+
+                android:layout_marginRight="2.5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/boundry"
+                android:singleLine="true" />
+            <Spinner
+                android:id="@+id/tehsil_sp"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2.5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/boundry"
+                android:singleLine="true" />
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/distributor_sp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/boundry"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/tehsilet_ll"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/tehsil_et"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textCursorDrawable="@null"
+                android:focusableInTouchMode="true"
+                android:soundEffectsEnabled="true"
+                android:background="@drawable/boundry"
+                android:hint="Enter Tehsil"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/sing_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textCursorDrawable="@null"
+                android:focusableInTouchMode="true"
+                android:soundEffectsEnabled="true"
+                android:background="@drawable/boundry"
+                android:hint="Enter Name"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:gravity="center|left">
+
+            <TextView
+                android:id="@+id/txt_timezone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/mobile_et"
+                android:layout_width="0dp"
+                android:textCursorDrawable="@null"
+                android:layout_height="40dp"
+                android:soundEffectsEnabled="true"
+                android:layout_marginRight="2.5dp"
+                android:maxLength="10"
+                android:layout_weight="0.5"
+                android:background="@drawable/boundry"
+                android:hint="Enter Mobile No."
+                android:inputType="number"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/age_et"
+                android:layout_width="0dp"
+                android:textCursorDrawable="@null"
+                android:layout_height="40dp"
+                android:soundEffectsEnabled="true"
+                android:layout_marginLeft="2.5dp"
+                android:layout_weight="0.5"
+                android:maxLength="2"
+                android:background="@drawable/boundry"
+                android:hint="Age in years"
+                android:inputType="number"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/answer_et_2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textCursorDrawable="@null"
+                android:soundEffectsEnabled="true"
+                android:background="@drawable/boundry"
+                android:hint="Village Address"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/state_sp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/boundry"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/pincode_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="2.5dp"
+                android:textCursorDrawable="@null"
+                android:soundEffectsEnabled="true"
+                android:layout_weight="0.5"
+                android:maxLength="6"
+                android:background="@drawable/boundry"
+                android:hint="Pincode"
+                android:inputType="number"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/nativloc_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2.5dp"
+                android:soundEffectsEnabled="true"
+                android:textCursorDrawable="@null"
+                android:layout_weight="0.5"
+                android:background="@drawable/boundry"
+                android:hint="Native Location"
+                android:inputType="text"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/exp_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textCursorDrawable="@null"
+                android:layout_marginRight="2.5dp"
+                android:soundEffectsEnabled="true"
+                android:layout_weight="0.5"
+                android:maxLength="2"
+                android:background="@drawable/boundry"
+                android:hint="Exp. in Years"
+                android:inputType="number"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/assois_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2.5dp"
+                android:soundEffectsEnabled="true"
+                android:layout_weight="0.5"
+                android:textCursorDrawable="@null"
+                android:background="@drawable/boundry"
+                android:hint="Asso. Distributor"
+                android:inputType="text"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/identity_sp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/boundry"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/cardno_et"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textCursorDrawable="@null"
+                android:soundEffectsEnabled="true"
+                android:inputType="text"
+                android:background="@drawable/boundry"
+                android:hint="Number of Card"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/next_btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimary"
+                android:text="Next"
+                android:textColor="@android:color/white" />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

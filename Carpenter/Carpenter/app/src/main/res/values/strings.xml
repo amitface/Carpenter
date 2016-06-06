@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">ACD</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
+
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <!--<item>@string/nav_item_notifications</item>-->
+    </string-array>
+
+    <string-array name="state_array">
+        <item value="">--Select State--</item>
+        <item value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</item>
+        <item value="Andhra Pradesh">Andhra Pradesh</item>
+        <item value="Arunachal Pradesh">Arunachal Pradesh</item>
+        <item value="Assam">Assam</item>
+        <item value="Bihar">Bihar</item>
+        <item value="Chandigarh">Chandigarh</item>
+        <item value="Chhattisgarh">Chhattisgarh</item>
+        <item value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</item>
+        <item value="Daman and Diu">Daman and Diu</item>
+        <item value="Delhi">Delhi</item>
+        <item value="Goa">Goa</item>
+        <item value="Gujarat">Gujarat</item>
+        <item value="Haryana">Haryana</item>
+        <item value="Himachal Pradesh">Himachal Pradesh</item>
+        <item value="Jammu and Kashmir">Jammu and Kashmir</item>
+        <item value="Jharkhand">Jharkhand</item>
+        <item value="Karnataka">Karnataka</item>
+        <item value="Kerala">Kerala</item>
+        <item value="Lakshadweep">Lakshadweep</item>
+        <item value="Madhya Pradesh">Madhya Pradesh</item>
+        <item value="Maharashtra">Maharashtra</item>
+        <item value="Manipur">Manipur</item>
+        <item value="Meghalaya">Meghalaya</item>
+        <item value="Mizoram">Mizoram</item>
+        <item value="Nagaland">Nagaland</item>
+        <item value="Orissa">Orissa</item>
+        <item value="Pondicherry">Pondicherry</item>
+        <item value="Punjab">Punjab</item>
+        <item value="Rajasthan">Rajasthan</item>
+        <item value="Sikkim">Sikkim</item>
+        <item value="Tamil Nadu">Tamil Nadu</item>
+        <item value="Tripura">Tripura</item>
+        <item value="Uttaranchal">Uttaranchal</item>
+        <item value="Uttar Pradesh">Uttar Pradesh</item>
+        <item value="West Bengal">West Bengal</item>
+        <item value="">--Select State--</item>
+        <item value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</item>
+        <item value="Andhra Pradesh">Andhra Pradesh</item>
+        <item value="Arunachal Pradesh">Arunachal Pradesh</item>
+        <item value="Assam">Assam</item>
+        <item value="Bihar">Bihar</item>
+        <item value="Chandigarh">Chandigarh</item>
+        <item value="Chhattisgarh">Chhattisgarh</item>
+        <item value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</item>
+        <item value="Daman and Diu">Daman and Diu</item>
+        <item value="Delhi">Delhi</item>
+        <item value="Goa">Goa</item>
+        <item value="Gujarat">Gujarat</item>
+        <item value="Haryana">Haryana</item>
+        <item value="Himachal Pradesh">Himachal Pradesh</item>
+        <item value="Jammu and Kashmir">Jammu and Kashmir</item>
+        <item value="Jharkhand">Jharkhand</item>
+        <item value="Karnataka">Karnataka</item>
+        <item value="Kerala">Kerala</item>
+        <item value="Lakshadweep">Lakshadweep</item>
+        <item value="Madhya Pradesh">Madhya Pradesh</item>
+        <item value="Maharashtra">Maharashtra</item>
+        <item value="Manipur">Manipur</item>
+        <item value="Meghalaya">Meghalaya</item>
+        <item value="Mizoram">Mizoram</item>
+        <item value="Nagaland">Nagaland</item>
+        <item value="Orissa">Orissa</item>
+        <item value="Pondicherry">Pondicherry</item>
+        <item value="Punjab">Punjab</item>
+        <item value="Rajasthan">Rajasthan</item>
+        <item value="Sikkim">Sikkim</item>
+        <item value="Tamil Nadu">Tamil Nadu</item>
+        <item value="Tripura">Tripura</item>
+        <item value="Uttaranchal">Uttaranchal</item>
+        <item value="Uttar Pradesh">Uttar Pradesh</item>
+        <item value="West Bengal">West Bengal</item>
+
+    </string-array>
+
+    <string-array name="district_array">
+
+        <item>--Select District--</item>
+        <item>Indore</item>
+    </string-array>
+
+    <string-array name="tehsil_array">
+
+        <item>--Select Tehsil--</item>
+        <item>Indore</item>
+    </string-array>
+
+    <string-array name="id_array">
+
+        <item>--Select--</item>
+        <item>Pan Card</item>
+        <item>Aadhar Card</item>
+        <item>Voter Id</item>
+        <item>Licence</item>
+
+    </string-array>
+
+    <string-array name="type_array">
+
+        <item>--Select--</item>
+        <item>Architect</item>
+        <item>Carpenter</item>
+
+    </string-array>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Logout</string>
+</resources>

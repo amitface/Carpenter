@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:weightSum="1"
+    android:background="@drawable/new_splash"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.60"
+         >
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_weight="0.40"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:weightSum="1">
+
+            <RadioButton
+                android:id="@+id/sign_up"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="25dp"
+                android:textSize="18sp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="English"
+                android:textColor="@color/colorPrimary" />
+
+            <RadioButton
+                android:id="@+id/clear"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:layout_marginLeft="25dp"
+                android:layout_weight="0.5"
+                android:text="Hindi"
+                android:textColor="@color/colorPrimary" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/enter_btn"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Enter"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:background="@color/colorPrimary"
+
+                />
+            </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

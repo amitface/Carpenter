@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+    </android.support.design.widget.AppBarLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:padding="8dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/boundry"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="0.40"
+                >
+
+                <TextView
+                    android:id="@+id/usrdone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Done"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    >
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Take Picture"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.60"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                >
+                <Button
+                    android:id="@+id/usercamer_iv"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:soundEffectsEnabled="true"
+                    android:background="@drawable/camera"
+                    android:onClick="dispatchTakePictureIntent"
+
+
+                    />
+
+
+
+
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:gravity="center|left">
+
+            <TextView
+                android:id="@+id/txt_timezone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/identity_sp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/boundry"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/cardno_et"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:background="@drawable/boundry"
+                android:hint="Nuber of Card"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/boundry"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="0.40"
+                >
+                <TextView
+                    android:id="@+id/iddone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Done"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    >
+
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Photo of Identity"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.60"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                >
+                <Button
+                    android:id="@+id/idcamer_iv"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:soundEffectsEnabled="true"
+                    android:background="@drawable/camera"
+                    android:onClick="dispatchTakePictureIntent"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/done_btn"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="2.5dp"
+                android:soundEffectsEnabled="true"
+                android:layout_weight="0.5"
+                android:background="@color/colorPrimary"
+                android:text="Done"
+                android:textColor="@android:color/white"  />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
