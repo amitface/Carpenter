@@ -49,8 +49,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
             android:gravity="center">
 
             <Spinner
@@ -59,7 +60,20 @@
                 android:layout_height="40dp"
                 android:background="@drawable/boundry"
                 android:singleLine="true" />
-
+            <EditText
+                android:id="@+id/annual_income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Annual income in lakhs *"
+                android:layout_marginTop="6dp"
+                android:textCursorDrawable="@null"
+                android:focusableInTouchMode="true"
+                android:soundEffectsEnabled="true"
+                android:padding="5dp"
+                android:background="@drawable/boundry"
+                android:inputType="number"
+                android:singleLine="true"
+                />
 
         </LinearLayout>
 
@@ -104,7 +118,7 @@
                 android:layout_marginRight="2.5dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/boundry"
-                android:singleLine="true" />
+                />
             <Spinner
                 android:id="@+id/tehsil_sp"
                 android:layout_width="0dp"
@@ -172,7 +186,7 @@
                 android:focusableInTouchMode="true"
                 android:soundEffectsEnabled="true"
                 android:background="@drawable/boundry"
-                android:hint="Enter Name"
+                android:hint="Enter Name *"
                 android:padding="5dp"
                 android:singleLine="true" />
 
@@ -231,7 +245,7 @@
                 android:maxLength="10"
                 android:layout_weight="0.5"
                 android:background="@drawable/boundry"
-                android:hint="Enter Mobile No."
+                android:hint="Enter Mobile No. *"
                 android:inputType="number"
                 android:padding="5dp"
                 android:singleLine="true" />

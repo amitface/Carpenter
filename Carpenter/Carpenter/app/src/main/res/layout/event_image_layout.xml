@@ -124,8 +124,8 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
                 android:soundEffectsEnabled="true"
-                android:text="Add New Entry"
-                    android:layout_margin="3dp"
+                android:text="Influence Data"
+                    android:layout_margin="2dp"
                 android:textColor="@android:color/white"
                 />
 
@@ -135,8 +135,8 @@
                     android:layout_height="match_parent"
                     android:background="@color/colorPrimary"
                     android:soundEffectsEnabled="true"
-                    android:text="Take Event Photo"
-                    android:layout_margin="3dp"
+                    android:text="Influence Meet"
+                    android:layout_margin="2dp"
                     android:textColor="@android:color/white"
                     />
             </TableRow>
@@ -148,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textSize="16sp"
-                    android:text="Pending Data :"/>
+                    android:text="Influence Data  :"/>
             </TableRow>
             <TableRow>
                 <TextView
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textSize="16sp"
-                    android:text="Pending Event Image :"/>
+                    android:text="Influence Meet :"/>
             </TableRow>
         </TableLayout>
 

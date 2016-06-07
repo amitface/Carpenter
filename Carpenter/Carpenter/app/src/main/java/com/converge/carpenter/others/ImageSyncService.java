@@ -125,7 +125,7 @@ public class ImageSyncService extends Service
 
                         startActivity(intent);
 
-                        HomeFragment.textViewPendingEvent.setText("Pending  Event Image : 0");
+                        HomeFragment.textViewPendingEvent.setText("Influence Meet : 0");
                         //Toast.makeText(getApplicationContext(),"Data Sync Completed.",Toast.LENGTH_SHORT).show();
                     }
                     else

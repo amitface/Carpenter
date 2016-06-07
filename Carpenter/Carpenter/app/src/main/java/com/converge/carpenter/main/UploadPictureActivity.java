@@ -30,6 +30,7 @@ import android.widget.Toast;
 import com.converge.carpenter.database.DataBaseHelper;
 import com.converge.carpenter.model.PainterDataBeen;
 import com.converge.carpenter.others.GPSTracker;
+import com.converge.carpenter.others.MarshMallowPermission;
 import com.converge.carpenter.others.Singelton;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -47,6 +48,7 @@ import java.util.Date;
  */
 public class UploadPictureActivity extends AppCompatActivity
 {
+    MarshMallowPermission marshMallowPermission = new MarshMallowPermission(this);
     ProgressDialog prgDialog;
     String encodedString;
     RequestParams params = new RequestParams();
@@ -290,7 +292,7 @@ public class UploadPictureActivity extends AppCompatActivity
             * */
 
 
-            PainterDataBeen painterDataBeen = new PainterDataBeen(Singelton.painter_type,Singelton.painter_name,Singelton.mobile_no,Singelton.age,Singelton.address,Singelton.state,Singelton.thesil,Singelton.district,Singelton.pincode,Singelton.native_loc,Singelton.exp,Singelton.distributor,Singelton.p_identity,Singelton.p_id_number,Singelton.lat,Singelton.longi,Singelton.date_time,Singelton.routeid,Singelton.rid);
+            PainterDataBeen painterDataBeen = new PainterDataBeen(Singelton.painter_type,Singelton.annual_income,Singelton.painter_name,Singelton.mobile_no,Singelton.age,Singelton.address,Singelton.state,Singelton.thesil,Singelton.district,Singelton.pincode,Singelton.native_loc,Singelton.exp,Singelton.distributor,Singelton.p_identity,Singelton.p_id_number,Singelton.lat,Singelton.longi,Singelton.date_time,Singelton.routeid,Singelton.rid);
             dataBaseHelper.createPaintersData(painterDataBeen);
             /*String POST_URL="http://cnvg.in/newinsight/painter_reg.php?";
 
@@ -424,9 +426,17 @@ public class UploadPictureActivity extends AppCompatActivity
 
 
     public void dispatchTakePictureIntent(View view) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        if (!marshMallowPermission.checkPermissionForCamera()) {
+            marshMallowPermission.requestPermissionForCamera();
+        } else {
+            if (!marshMallowPermission.checkPermissionForExternalStorage()) {
+                marshMallowPermission.requestPermissionForExternalStorage();
+            } else {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
+            }
         }
     }
     @Override

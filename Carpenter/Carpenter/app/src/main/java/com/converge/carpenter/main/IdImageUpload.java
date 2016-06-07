@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.converge.carpenter.database.DataBaseHelper;
 import com.converge.carpenter.model.IdImageBeen;
 import com.converge.carpenter.others.GPSTracker;
+import com.converge.carpenter.others.MarshMallowPermission;
 import com.converge.carpenter.others.Singelton;
 import com.loopj.android.http.RequestParams;
 
@@ -42,6 +43,7 @@ import java.util.Date;
  */
 public class IdImageUpload extends AppCompatActivity
 {
+    MarshMallowPermission marshMallowPermission = new MarshMallowPermission(this);
     ProgressDialog prgDialog;
     String encodedString;
     RequestParams params = new RequestParams();
@@ -105,18 +107,26 @@ public class IdImageUpload extends AppCompatActivity
             public void onClick(View v)
             {
 
-                values = new ContentValues();
-                values.put(MediaStore.Images.Media.TITLE, "New Picture");
-                values.put(MediaStore.Images.Media.DESCRIPTION, "From your Camera");
-                imageUri = getContentResolver().insert(
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+                if (!marshMallowPermission.checkPermissionForCamera()) {
+                    marshMallowPermission.requestPermissionForCamera();
+                } else {
+                    if (!marshMallowPermission.checkPermissionForExternalStorage()) {
+                        marshMallowPermission.requestPermissionForExternalStorage();
+                    } else {
+                        values = new ContentValues();
+                        values.put(MediaStore.Images.Media.TITLE, "New Picture");
+                        values.put(MediaStore.Images.Media.DESCRIPTION, "From your Camera");
+                        imageUri = getContentResolver().insert(
+                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
                 /*Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
                 }*/
+                    }
+                }
             }
         });
 

@@ -41,6 +41,7 @@ public class PainterDetailsActivity extends AppCompatActivity
     private Button com_sub_btn;
     private Button next_btn;
     private EditText sing_email;
+    private EditText editTextAnnualIncome;
     private EditText mobile_et;
     private EditText age_et;
     private EditText answer_et_2;
@@ -49,7 +50,7 @@ public class PainterDetailsActivity extends AppCompatActivity
     private Spinner district_sp;
     private EditText pincode_et;
     private EditText nativloc_et,exp_et,assois_et;
-    private String painter_name,mobile_no,age,address,state,thesil,district,pincode,native_loc,exp,distributor,route_id,rid, lat,longi;
+    private String painter_name,annual_income,mobile_no,age,address,state,thesil,district,pincode,native_loc,exp,distributor,route_id,rid, lat,longi;
     private String routeid;
     private Spinner identity_sp;
     private EditText cardno_et;
@@ -106,6 +107,7 @@ public class PainterDetailsActivity extends AppCompatActivity
         });
         next_btn = (Button) findViewById(R.id.next_btn);
         sing_email = (EditText)findViewById(R.id.sing_email);
+        editTextAnnualIncome = (EditText)findViewById(R.id.annual_income);
         mobile_et = (EditText)findViewById(R.id.mobile_et);
         age_et = (EditText)findViewById(R.id.age_et);
         answer_et_2 = (EditText)findViewById(R.id.answer_et_2);
@@ -271,9 +273,9 @@ public class PainterDetailsActivity extends AppCompatActivity
         
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 painter_name = sing_email.getText().toString();
+                annual_income = editTextAnnualIncome.getText().toString();
                 painter_name = painter_name.replace(" ", "%20");
                 mobile_no = mobile_et.getText().toString();
                 age = age_et.getText().toString();
@@ -281,7 +283,7 @@ public class PainterDetailsActivity extends AppCompatActivity
                 address = address.replace(" ", "%20");
                 p_arch_type = arch_type_sp.getSelectedItem().toString();
                 p_arch_type = p_arch_type.replace(" ", "%20");
-                System.out.println("type"+p_arch_type);
+                System.out.println("type" + p_arch_type);
                 /*state = state_sp.getSelectedItem().toString();
                 state = state.replace(" ", "%20");*/
                 p_id_number = cardno_et.getText().toString();
@@ -299,116 +301,133 @@ public class PainterDetailsActivity extends AppCompatActivity
                 native_loc = native_loc.replace(" ", "%20");
                 exp = exp_et.getText().toString();
                 distributor = assois_et.getText().toString();
-                distributor = distributor.replace(" ","%20");
+                distributor = distributor.replace(" ", "%20");
 
-
-                if(painter_name.length()>0&&mobile_no.length()>0&&age.length()>0&&address.length()>0&&pincode.length()>0&&native_loc.length()>0&&exp.length()>0&&distributor.length()>0)
+                if(age.length()>0 && exp.length()>0)
                 {
-
-                    if(mobile_no.length()>9)
-                    {
-                        if(pincode.length()>5)
-                        {
-                            if(exp.length()>0 && exp.length()<=2)
-                            {
-                                if(age.length()>1)
-                                {
-                                    if(Integer.parseInt(age_et.getText().toString())>Integer.parseInt(exp_et.getText().toString()))
-                                    {
-                                        p_identity = identity_sp.getSelectedItem().toString();
-                                        p_identity = p_identity.replace(" ", "%20");
-                                        state = loginStateBeenArrayList.get(0).getState();
-                                        state = state.replace(" ", "%20");
-
-                                        district = district_sp.getSelectedItem().toString();
-                                        district = district.replace(" ", "%20");
-                                        if (tehsil == false) {
-                                            thesil = tehsil_sp.getSelectedItem().toString();
-                                            thesil = thesil.replace(" ", "%20");
-                                        }
+                    if (Integer.parseInt(age_et.getText().toString()) < Integer.parseInt(exp_et.getText().toString())) {
 
 
-                                        if (tehsil == true) {
-                                            thesil = tehsil_et.getText().toString();
-                                            thesil = thesil.replace(" ", "%20");
-                                        }
-
-
-                                        Singelton.painter_type = p_arch_type;
-                                        Singelton.painter_name = painter_name;
-                                        Singelton.mobile_no = mobile_no;
-                                        Singelton.age = age;
-                                        Singelton.address = address;
-                                        Singelton.state = state;
-                                        Singelton.thesil = thesil;
-                                        Singelton.district = district;
-                                        Singelton.pincode = pincode;
-                                        Singelton.native_loc = native_loc;
-                                        Singelton.exp = exp;
-                                        Singelton.distributor = distributor;
-                                        Singelton.p_identity = p_identity;
-                                        Singelton.p_id_number = p_id_number;
-                                        Singelton.lat = lat;
-                                        Singelton.longi = longi;
-                                        Singelton.date_time = date_time;
-                                        Singelton.routeid = routeid;
-                                        Singelton.rid = rid;
-
-
-                                        Intent in = new Intent(PainterDetailsActivity.this, UserImageUpload.class);
-                                        //in.putExtra("painter_name",painter_name);
-                                        in.putExtra("p_primg", "timestamp");
-                                        in.putExtra("p_idimg", "timestamp");
-                                        startActivity(in);
-                                        tehsil = false;
-                                        finish();
-                                    }
-                                    else
-                                    {
-                                        Toast.makeText(getApplicationContext(),"Expericence cannot be greater than Age.",Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                                else
-                                {
-                                    Toast.makeText(getApplicationContext(),"Please Enter Correct Age.",Toast.LENGTH_SHORT).show();
-                                }
-
-                            }
-                            else
-                            {
-                                Toast.makeText(getApplicationContext(),"Please Enter Valid Exp.",Toast.LENGTH_SHORT).show();
-                            }
-
-
-                            //new SubmiDataTask().execute();
-                        }
-                        else
-                        {
-                            Toast.makeText(getApplicationContext(),"Please Enter Valid Pincode.",Toast.LENGTH_SHORT).show();
-
-                        }
-                    }else
-                    {
-                        Toast.makeText(getApplicationContext(),"Please Enter Valid Mobile No.",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Expericence cannot be greater than Age.", Toast.LENGTH_SHORT).show();
+                        return;
                     }
-
-
-                }else
-                {
-                    Toast.makeText(getApplicationContext(),"Please fil all the field.",Toast.LENGTH_SHORT).show();
                 }
 
+                else if(arch_type_sp.getSelectedItemPosition()==0)
+                {
+                    Toast.makeText(getApplicationContext(), "Please Choose Category", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(annual_income.length()<=0)
+                {
+                    Toast.makeText(getApplicationContext(),"Enter Annual Income",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else  if(painter_name.length()<=0)
+                {
+                    Toast.makeText(getApplicationContext(),"Please enter Name",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if ( mobile_no.length()<10)
+                {
+                     Toast.makeText(getApplicationContext(), "Please Enter Valid Mobile No.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                if(age.length()==0)
+                {
+                    age="empty";
+                }
+                if(address.length()==0)
+                {
+                    address = "empty";
+                }
+                if(pincode.length()==0)
+                {
+                    pincode="empty";
+                }
+                if(native_loc.length()==0)
+                {
+                    native_loc="empty";
+                }
+                if (exp.length()==0)
+                {
+                    exp="empty";
+                }
+                if(distributor.length()==0)
+                {
+                    distributor="empty";
+                }
+                if(p_id_number.length()==0)
+                {
+                    p_id_number="empty";
+                }
+
+
+
+                            p_identity = identity_sp.getSelectedItem().toString();
+                            p_identity = p_identity.replace(" ", "%20");
+                            state = loginStateBeenArrayList.get(0).getState();
+                            state = state.replace(" ", "%20");
+                            district = district_sp.getSelectedItem().toString();
+                            district = district.replace(" ", "%20");
+                if(district.equals("--Select%20District--"))
+                {
+                    tehsil=true;
+                }
+
+                            if (tehsil == false) {
+                                thesil = tehsil_sp.getSelectedItem().toString();
+                                thesil = thesil.replace(" ", "%20");
+                            }
+
+
+                            if (tehsil == true) {
+                                thesil = tehsil_et.getText().toString();
+                                thesil = thesil.replace(" ", "%20");
+                            }
+
+                            if(thesil.length()==0)
+                            {
+                                thesil="empty";
+                            }
+
+                            Singelton.painter_type = p_arch_type;
+                            Singelton.annual_income=annual_income;
+                            Singelton.painter_name = painter_name;
+                            Singelton.mobile_no = mobile_no;
+                            Singelton.age = age;
+                            Singelton.address = address;
+                            Singelton.state = state;
+                            Singelton.thesil = thesil;
+                            Singelton.district = district;
+                            Singelton.pincode = pincode;
+                            Singelton.native_loc = native_loc;
+                            Singelton.exp = exp;
+                            Singelton.distributor = distributor;
+                            Singelton.p_identity = p_identity;
+                            Singelton.p_id_number = p_id_number;
+                            Singelton.lat = lat;
+                            Singelton.longi = longi;
+                            Singelton.date_time = date_time;
+                            Singelton.routeid = routeid;
+                            Singelton.rid = rid;
+
+
+                            Intent in = new Intent(PainterDetailsActivity.this, UserImageUpload.class);
+                            //in.putExtra("painter_name",painter_name);
+                            in.putExtra("p_primg", "timestamp");
+                            in.putExtra("p_idimg", "timestamp");
+                            startActivity(in);
+                            tehsil = false;
+                            finish();
 
             }
         });
 
-
-
-
     }
-
-
-
 
 private void setSpinner(String[] sp_array,Spinner sp_name)
 {
@@ -432,8 +451,6 @@ private void setSpinner(String[] sp_array,Spinner sp_name)
             progressDoalog.show();
         }
 
-
-
         @Override
         protected String doInBackground(String... params) {
             // TODO Auto-generated method stub  12050i04022
@@ -446,7 +463,7 @@ private void setSpinner(String[] sp_array,Spinner sp_name)
             * */
 
 
-            PainterDataBeen painterDataBeen = new PainterDataBeen(p_arch_type,painter_name,mobile_no,age,address,state,thesil,district,pincode,native_loc,exp,distributor,p_identity,p_id_number,lat,longi,date_time,routeid,rid);
+            PainterDataBeen painterDataBeen = new PainterDataBeen(p_arch_type,annual_income,painter_name,mobile_no,age,address,state,thesil,district,pincode,native_loc,exp,distributor,p_identity,p_id_number,lat,longi,date_time,routeid,rid);
             dataBaseHelper.createPaintersData(painterDataBeen);
             /*String POST_URL="http://cnvg.in/newinsight/painter_reg.php?";
 
@@ -552,3 +569,101 @@ private void setSpinner(String[] sp_array,Spinner sp_name)
     }
 
 }
+
+
+//
+//if(painter_name.length()>0&&mobile_no.length()>0&&age.length()>0&&address.length()>0&&pincode.length()>0&&native_loc.length()>0&&exp.length()>0&&distributor.length()>0)
+//        {
+//
+//        if(mobile_no.length()>9)
+//        {
+//        if(pincode.length()>5)
+//        {
+//        if(exp.length()>0 && exp.length()<=2)
+//        {
+//        if(age.length()>1)
+//        {
+//        if(Integer.parseInt(age_et.getText().toString())>Integer.parseInt(exp_et.getText().toString()))
+//        {
+//        p_identity = identity_sp.getSelectedItem().toString();
+//        p_identity = p_identity.replace(" ", "%20");
+//        state = loginStateBeenArrayList.get(0).getState();
+//        state = state.replace(" ", "%20");
+//
+//        district = district_sp.getSelectedItem().toString();
+//        district = district.replace(" ", "%20");
+//        if (tehsil == false) {
+//        thesil = tehsil_sp.getSelectedItem().toString();
+//        thesil = thesil.replace(" ", "%20");
+//        }
+//
+//
+//        if (tehsil == true) {
+//        thesil = tehsil_et.getText().toString();
+//        thesil = thesil.replace(" ", "%20");
+//        }
+//
+//
+//        Singelton.painter_type = p_arch_type;
+//        Singelton.painter_name = painter_name;
+//        Singelton.mobile_no = mobile_no;
+//        Singelton.age = age;
+//        Singelton.address = address;
+//        Singelton.state = state;
+//        Singelton.thesil = thesil;
+//        Singelton.district = district;
+//        Singelton.pincode = pincode;
+//        Singelton.native_loc = native_loc;
+//        Singelton.exp = exp;
+//        Singelton.distributor = distributor;
+//        Singelton.p_identity = p_identity;
+//        Singelton.p_id_number = p_id_number;
+//        Singelton.lat = lat;
+//        Singelton.longi = longi;
+//        Singelton.date_time = date_time;
+//        Singelton.routeid = routeid;
+//        Singelton.rid = rid;
+//
+//
+//        Intent in = new Intent(PainterDetailsActivity.this, UserImageUpload.class);
+//        //in.putExtra("painter_name",painter_name);
+//        in.putExtra("p_primg", "timestamp");
+//        in.putExtra("p_idimg", "timestamp");
+//        startActivity(in);
+//        tehsil = false;
+//        finish();
+//        }
+//        else
+//        {
+//        Toast.makeText(getApplicationContext(),"Expericence cannot be greater than Age.",Toast.LENGTH_SHORT).show();
+//        }
+//        }
+//        else
+//        {
+//        Toast.makeText(getApplicationContext(),"Please Enter Correct Age.",Toast.LENGTH_SHORT).show();
+//        }
+//
+//        }
+//        else
+//        {
+//        Toast.makeText(getApplicationContext(),"Please Enter Valid Exp.",Toast.LENGTH_SHORT).show();
+//        }
+//
+//
+//        //new SubmiDataTask().execute();
+//        }
+//        else
+//        {
+//        Toast.makeText(getApplicationContext(),"Please Enter Valid Pincode.",Toast.LENGTH_SHORT).show();
+//
+//        }
+//        }else
+//        {
+//        Toast.makeText(getApplicationContext(),"Please Enter Valid Mobile No.",Toast.LENGTH_SHORT).show();
+//        }
+//
+//
+//        }else
+//        {
+//        Toast.makeText(getApplicationContext(),"Please fil all the field.",Toast.LENGTH_SHORT).show();
+//        }

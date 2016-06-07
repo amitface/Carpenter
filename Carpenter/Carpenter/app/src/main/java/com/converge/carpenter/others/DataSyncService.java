@@ -139,7 +139,7 @@ public class DataSyncService extends Service
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                         startActivity(intent);
-                        HomeFragment.textViewPendingEntry.setText("Pending  Data : 0");
+                        HomeFragment.textViewPendingEntry.setText("Influence Data : 0");
                         //dialogueBox("Data Sync Completed.");
                         //Toast.makeText(getApplicationContext(),"Data Sync Completed.",Toast.LENGTH_SHORT).show();
                     }
@@ -195,7 +195,7 @@ public class DataSyncService extends Service
 
             String POST_URL=Constant.PAINTER_DATA_UPLOADING;
 
-            String POST_PARAMS = "p_type="+painterDataBeenArrayList.get(position).getPainter_type()+"&p_name="+painterDataBeenArrayList.get(position).getPainter_name()+"&p_mobile="+painterDataBeenArrayList.get(position).getMobile_no()+"&p_age="+painterDataBeenArrayList.get(position).getAge()+"&p_village="+painterDataBeenArrayList.get(position).getAddress()+"&p_state="+painterDataBeenArrayList.get(position).getState()+"&p_tehsil="+painterDataBeenArrayList.get(position).getThesil()
+            String POST_PARAMS = "p_type="+painterDataBeenArrayList.get(position).getPainter_type()+"&bus_potential="+painterDataBeenArrayList.get(position).getAnnual_Income()+"&p_name="+painterDataBeenArrayList.get(position).getPainter_name()+"&p_mobile="+painterDataBeenArrayList.get(position).getMobile_no()+"&p_age="+painterDataBeenArrayList.get(position).getAge()+"&p_village="+painterDataBeenArrayList.get(position).getAddress()+"&p_state="+painterDataBeenArrayList.get(position).getState()+"&p_tehsil="+painterDataBeenArrayList.get(position).getThesil()
                     +"&p_dist="+painterDataBeenArrayList.get(position).getDistrict()+"&p_pincode="+painterDataBeenArrayList.get(position).getPincode()+"&p_location="+painterDataBeenArrayList.get(position).getNative_loc()+"&p_exp="+painterDataBeenArrayList.get(position).getExp()+"&p_distributor="+painterDataBeenArrayList.get(position).getDistributor()
                     +"&p_identity="+painterDataBeenArrayList.get(position).getP_identity()+"&p_id_number="+painterDataBeenArrayList.get(position).getP_id_number()+"&latitude="+painterDataBeenArrayList.get(position).getLatitude()+"&longitude="+painterDataBeenArrayList.get(position).getLongitude()
                     +"&date_time="+painterDataBeenArrayList.get(position).getDate_time()+"&routeid="+painterDataBeenArrayList.get(position).getRouteid()+"&rid="+painterDataBeenArrayList.get(position).getRid();

@@ -31,7 +31,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
     private static final String LOG = "DatabaseHelper";
 
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION =1;
 
     // Database Name
     private static final String DATABASE_NAME = "carpenter";
@@ -61,6 +61,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
     //String p_identity,date_time,latitude,longitude;
 
     private static final String PAINTER_TYPE = "painter_type";
+    private static final String ANNUAL_INCOME = "annual_income";
     private static final String PAINTER_NAME = "painter_name";
     private static final String MOBILE_NO = "mobile_no";
     private static final String NAME = "name";
@@ -108,6 +109,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
     private static final String CREATE_TABLE_LOGINDATA = "CREATE TABLE "
             + PAINTER_LOGIN_DATA + "(" + NUM + " TEXT,"
             + RID + " TEXT,"
+
             + ACT_TYP + " TEXT,"
             + ROUTE_DATE + " TEXT,"
             + VILNAME + " TEXT,"
@@ -118,12 +120,13 @@ public class DataBaseHelper extends SQLiteOpenHelper
 
 
 
-    //for painter data String painter_name,mobile_no,age,address,
+    //for painter data String painter_name,annual_income,mobile_no,age,address,
     // state,thesil,district,pincode,native_loc,exp,distributor,rid,routeid,p_id_number;
     //String p_identity,date_time,latitude,longitude;
 
     private static final String CREATE_TABLE_PAINTERDATA = "CREATE TABLE "
             + PAINTER_DATA_TABLE + "(" + PAINTER_TYPE + " TEXT,"
+            + ANNUAL_INCOME+ " TEXT,"
             + PAINTER_NAME + " TEXT,"
             + MOBILE_NO + " TEXT,"
             + AGE + " TEXT,"
@@ -203,12 +206,12 @@ public class DataBaseHelper extends SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
 
-        db.execSQL("DROP TABLE IF EXISTS " + CREATE_TABLE_LOGINDATA);
-        db.execSQL("DROP TABLE IF EXISTS " + CREATE_TABLE_PAINTERDATA);
-        db.execSQL("DROP TABLE IF EXISTS " + CREATE_TABLE_PAINTEREVENTIMAGE);
-        db.execSQL("DROP TABLE IF EXISTS " + CREATE_TABLE_PAINTERIDIMAGE);
-        db.execSQL("DROP TABLE IF EXISTS " + CREATE_TABLE_PAINTERUSERIMAGE);
-        db.execSQL("DROP TABLE IF EXISTS " + CREATE_TABLE_LOGINSTATE);
+        db.execSQL("DROP TABLE IF EXISTS " + PAINTER_LOGIN_DATA);
+        db.execSQL("DROP TABLE IF EXISTS " + PAINTER_DATA_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + PAINTER_EVENTIMAGE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + PAINTER_IDIMAGE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + PAINTER_USERIMAGE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + PAINTER_LOGIN_TABLE);
         onCreate(db);
     }
 
@@ -275,6 +278,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
         ContentValues values = new ContentValues();
 
         values.put(PAINTER_TYPE, painterDataBeen.getPainter_type());
+        values.put(ANNUAL_INCOME, painterDataBeen.getAnnual_Income());
         values.put(PAINTER_NAME, painterDataBeen.getPainter_name());
         values.put(MOBILE_NO, painterDataBeen.getMobile_no());
         values.put(AGE, painterDataBeen.getAge());
@@ -605,6 +609,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
 
                 PainterDataBeen sb = new PainterDataBeen();
                 sb.setPainter_type(c.getString(c.getColumnIndex(PAINTER_TYPE)));
+                sb.setAnnual_Income(c.getString(c.getColumnIndex(ANNUAL_INCOME)));
                 sb.setPainter_name(c.getString(c.getColumnIndex(PAINTER_NAME)));
                 sb.setMobile_no(c.getString(c.getColumnIndex(MOBILE_NO)));
                 sb.setAge(c.getString(c.getColumnIndex(AGE)));

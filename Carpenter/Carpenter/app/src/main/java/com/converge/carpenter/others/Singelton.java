@@ -31,8 +31,7 @@ public class Singelton
     public static volatile String date_time="";
     public static volatile String routeid="";
     public static volatile String rid="";
-
-
+    public static volatile String annual_income="";
 
 
     public static boolean checkInternetConenction(Context context)

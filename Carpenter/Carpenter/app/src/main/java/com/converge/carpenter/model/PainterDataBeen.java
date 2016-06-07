@@ -7,18 +7,20 @@ public class PainterDataBeen
 {
     String painter_name,mobile_no,age,address,state,thesil,district,pincode,native_loc,exp,distributor,rid,routeid,p_id_number;
     String p_identity,date_time,latitude,longitude,painter_type;
+     String annual_Income;
 
     public PainterDataBeen()
     {
 
     }
 
-    public PainterDataBeen(String painter_type, String painter_name,String mobile_no,String age,String address,
+    public PainterDataBeen(String painter_type,String annual_Income, String painter_name,String mobile_no,String age,String address,
                            String state,String thesil,String district,String pincode,String
             native_loc,String exp,String distributor,String p_identity,String p_id_number,String latitude, String longitude, String date_time, String routeid, String rid)
     {
 
         this.painter_type = painter_type;
+        this.annual_Income = annual_Income;
         this.painter_name = painter_name;
         this.mobile_no = mobile_no;
         this.age = age;
@@ -191,5 +193,13 @@ public class PainterDataBeen
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public String getAnnual_Income() {
+        return annual_Income;
+    }
+
+    public void setAnnual_Income(String annual_Income){
+        this.annual_Income = annual_Income;
     }
 }

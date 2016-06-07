@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             fragmentTransaction.commit();
 
             // set the toolbar title
-            getSupportActionBar().setTitle(title);
+//            getSupportActionBar().setTitle(title);
         }
     }
 

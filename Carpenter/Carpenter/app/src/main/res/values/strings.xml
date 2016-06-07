@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ACD</string>
+    <string name="app_name">Archid Connect</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -118,9 +118,10 @@
 
     <string-array name="type_array">
 
-        <item>--Select--</item>
+        <item>--Category--</item>
         <item>Architect</item>
         <item>Carpenter</item>
+        <item>Dealer</item>
 
     </string-array>
 

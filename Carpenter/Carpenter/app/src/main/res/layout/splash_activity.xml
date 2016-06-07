@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="bottom"
     android:weightSum="1"
-    android:background="@drawable/new_splash"
+    android:background="@drawable/archid_meet_splash"
     android:orientation="vertical" >
 
     <LinearLayout
