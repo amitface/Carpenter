@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="1"
+    tools:context="com.example.e_challan.PostReport">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".9">
+    <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+   <ImageView
+       android:id="@+id/imageView"
+       android:layout_width="150dp"
+       android:layout_height="150dp"
+       android:layout_gravity="center_horizontal"
+       android:src="@drawable/bus"
+       android:layout_margin="5dp"
+       />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vehicle type"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_pirates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Commercial"
+                    />
+                <RadioButton android:id="@+id/radio_ninjas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Private"
+                   />
+
+            </RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:inputType="phone"
+        android:ems="10"
+        android:padding="4dp"
+        android:layout_marginTop="3dp"
+        android:hint="Enter Vehicle No"
+        android:id="@+id/editText2"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center_horizontal" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:entries="@array/spinner"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/editText3"
+        android:layout_marginTop="4dp"
+        android:hint="Enter Location"
+        android:padding="4dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="4dp"
+        android:padding="4dp"
+        android:background="@drawable/edit_text_background"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:hint="Enter Message"
+        android:id="@+id/editText4" />
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/buttonSubmitReport"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
+        android:background="#2742A7"
+        android:text="Submit"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

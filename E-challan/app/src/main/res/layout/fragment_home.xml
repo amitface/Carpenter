@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/bg2"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:weightSum="1"
+    >
+    <ImageSwitcher
+        android:id="@+id/imageSwitcher1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".6"
+        >
+
+    </ImageSwitcher>
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight=".6"-->
+        <!--android:background="@drawable/slid" />-->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:stretchColumns="*"
+        android:shrinkColumns="*"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_weight=".4">
+        <TableRow>
+            <ImageView
+                android:id="@+id/imageViewPostReport"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:padding="5dp"
+                android:background="#C65100"
+                android:layout_span="1"
+                android:src="@drawable/im_camera"/>
+            <Button
+                android:id="@+id/buttonPostReport"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#FF6800"
+                android:padding="5dp"
+                android:layout_span="6"
+                android:textSize="14sp"
+                android:textAlignment="center"
+
+                android:textColor="@android:color/white"
+                android:text="Post Complaint"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
+

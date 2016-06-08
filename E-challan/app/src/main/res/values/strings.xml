@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">E-challan</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="spinner">
+        <item>Select Complaint Type</item>
+        <item>Rash Driving</item>
+        <item>Driving with Excess Speed</item>
+        <item>Overloaded with Luggage</item>
+        <item>Overloaded with Passenger </item>
+        <item>No Emergency Exit</item>
+        <item>Excess Pollution</item>
+        <item>Driver using Mobile while driving </item>
+        <item>Driver was drunk while driving</item>
+        <item>Playing loud music </item>
+        <item>Using Pressure Horn </item>
+    </string-array>
+
+</resources>

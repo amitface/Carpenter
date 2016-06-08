@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.example.e_challan.Acknowledgement">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your complaint registered successfully."
+        android:id="@+id/textView4"
+        android:textColor="#331D6C"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="107dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#331D6C"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Thank you for using E Challan App"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView4"
+
+        android:layout_marginTop="20dp" />
+
+
+
+</RelativeLayout>
